@@ -7,7 +7,7 @@ export interface MigrationModel {
 }
 
 export interface MigrationStore {
-  init(options: Record<string, unknown>): Promise<void>;
+  init(options: Record<string, unknown>): Promise<void> | void;
   getAppliedMigrations(): Promise<MigrationModel[]>;
   insertMigration(migration: Migration): Promise<void>;
 }

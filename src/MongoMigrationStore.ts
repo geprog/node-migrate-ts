@@ -1,4 +1,4 @@
-import { Collection, MongoClient, MongoClientOptions } from 'mongodb';
+import { Collection, Db } from 'mongodb';
 
 import { Migration } from './Migration';
 import { MigrationModel, MigrationStore } from './MigrationStore';
@@ -6,24 +6,8 @@ import { MigrationModel, MigrationStore } from './MigrationStore';
 export class MongoMigrationStore implements MigrationStore {
   private collection?: Collection<MigrationModel>;
 
-  async init({
-    uri,
-    database,
-    migrationsCollection,
-    options,
-  }: {
-    uri: string;
-    database: string;
-    migrationsCollection: string;
-    options?: MongoClientOptions;
-  }): Promise<void> {
-    try {
-      const client = await MongoClient.connect(uri, options);
-      const db = client.db(database);
-      this.collection = db.collection(migrationsCollection);
-    } catch (e) {
-      throw new Error(e);
-    }
+  init({ db, migrationsCollection }: { db: Db; migrationsCollection: string }): void {
+    this.collection = db.collection(migrationsCollection);
   }
 
   getAppliedMigrations(): Promise<MigrationModel[]> {
