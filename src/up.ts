@@ -1,10 +1,12 @@
-import { Migration } from './Migration';
+import { Migration, MigrationContext } from './Migration';
 import { MigrationStore } from './MigrationStore';
 
 export default async ({
+  context,
   migrations,
   migrationStore,
 }: {
+  context?: MigrationContext;
   migrations: Migration[];
   migrationStore: MigrationStore;
 }): Promise<void> => {
@@ -15,7 +17,7 @@ export default async ({
   );
 
   for await (const migration of migrationsToApply) {
-    await migration.up();
+    await migration.up(context);
     await migrationStore.insertMigration(migration);
   }
 };
