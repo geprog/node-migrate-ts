@@ -3,20 +3,19 @@ lockfileVersion: 5.3
 specifiers:
   '@geprog/eslint-config': 0.0.1
   '@jest/types': 26.6.2
-  '@semantic-release/changelog': 5.0.1
   '@semantic-release/commit-analyzer': 8.0.1
-  '@semantic-release/git': 9.0.0
+  '@semantic-release/github': 7.2.3
   '@semantic-release/npm': 7.1.3
   '@semantic-release/release-notes-generator': 9.0.3
   '@types/jest': 26.0.23
   '@types/mongodb': ^3.6.20
   '@types/node': 15.12.4
   esbuild: 0.12.9
-  esbuild-register: 2.6.0
+  esbuild-register: 3.0.0
   eslint: 7.29.0
   jest: 26.6.3
   jest-junit: 12.2.0
-  mongodb: ^3.6.0
+  mongodb: 3.6.10
   prettier: 2.3.1
   rollup: 2.52.2
   rollup-plugin-dts: 3.0.2
@@ -29,16 +28,15 @@ specifiers:
 devDependencies:
   '@geprog/eslint-config': 0.0.1_0269f75310be89f1dfa90b23d5b7999c
   '@jest/types': 26.6.2
-  '@semantic-release/changelog': 5.0.1_semantic-release@17.4.4
   '@semantic-release/commit-analyzer': 8.0.1_semantic-release@17.4.4
-  '@semantic-release/git': 9.0.0_semantic-release@17.4.4
+  '@semantic-release/github': 7.2.3_semantic-release@17.4.4
   '@semantic-release/npm': 7.1.3_semantic-release@17.4.4
   '@semantic-release/release-notes-generator': 9.0.3_semantic-release@17.4.4
   '@types/jest': 26.0.23
   '@types/mongodb': 3.6.20
   '@types/node': 15.12.4
   esbuild: 0.12.9
-  esbuild-register: 2.6.0
+  esbuild-register: 3.0.0_esbuild@0.12.9
   eslint: 7.29.0
   jest: 26.6.3_ts-node@10.0.0
   jest-junit: 12.2.0
@@ -821,19 +819,6 @@ packages:
     resolution: {integrity: sha512-Myxw//kzromB9yWgS8qYGuGVf91oBUUJpNvy5eM50sqvmKLbKjwLxohJnkWGTeeI9v9IBMtPLxz5Gc60FIfvCA==}
     dev: true
 
-  /@semantic-release/changelog/5.0.1_semantic-release@17.4.4:
-    resolution: {integrity: sha512-unvqHo5jk4dvAf2nZ3aw4imrlwQ2I50eVVvq9D47Qc3R+keNqepx1vDYwkjF8guFXnOYaYcR28yrZWno1hFbiw==}
-    engines: {node: '>=10.18'}
-    peerDependencies:
-      semantic-release: '>=15.8.0 <18.0.0'
-    dependencies:
-      '@semantic-release/error': 2.2.0
-      aggregate-error: 3.1.0
-      fs-extra: 9.1.0
-      lodash: 4.17.21
-      semantic-release: 17.4.4
-    dev: true
-
   /@semantic-release/commit-analyzer/8.0.1_semantic-release@17.4.4:
     resolution: {integrity: sha512-5bJma/oB7B4MtwUkZC2Bf7O1MHfi4gWe4mA+MIQ3lsEV0b422Bvl1z5HRpplDnMLHH3EXMoRdEng6Ds5wUqA3A==}
     engines: {node: '>=10.18'}
@@ -854,25 +839,6 @@ packages:
 
   /@semantic-release/error/2.2.0:
     resolution: {integrity: sha512-9Tj/qn+y2j+sjCI3Jd+qseGtHjOAeg7dU2/lVcqIQ9TV3QDaDXDYXcoOHU+7o2Hwh8L8ymL4gfuO7KxDs3q2zg==}
-    dev: true
-
-  /@semantic-release/git/9.0.0_semantic-release@17.4.4:
-    resolution: {integrity: sha512-AZ4Zha5NAPAciIJH3ipzw/WU9qLAn8ENaoVAhD6srRPxTpTzuV3NhNh14rcAo8Paj9dO+5u4rTKcpetOBluYVw==}
-    engines: {node: '>=10.18'}
-    peerDependencies:
-      semantic-release: '>=16.0.0 <18.0.0'
-    dependencies:
-      '@semantic-release/error': 2.2.0
-      aggregate-error: 3.1.0
-      debug: 4.3.2
-      dir-glob: 3.0.1
-      execa: 4.1.0
-      lodash: 4.17.21
-      micromatch: 4.0.4
-      p-reduce: 2.1.0
-      semantic-release: 17.4.4
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@semantic-release/github/7.2.3_semantic-release@17.4.4:
@@ -1506,11 +1472,6 @@ packages:
 
   /asynckit/0.4.0:
     resolution: {integrity: sha1-x57Zf380y48robyXkLzDZkdLS3k=}
-    dev: true
-
-  /at-least-node/1.0.0:
-    resolution: {integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==}
-    engines: {node: '>= 4.0.0'}
     dev: true
 
   /atob/2.1.2:
@@ -2305,8 +2266,10 @@ packages:
       is-symbol: 1.0.4
     dev: true
 
-  /esbuild-register/2.6.0:
-    resolution: {integrity: sha512-2u4AtnCXP5nivtIxZryiZOUcEQkOzFS7UhAqibUEmaTAThJ48gDLYTBF/Fsz+5r0hbV1jrFE6PQvPDUrKZNt/Q==}
+  /esbuild-register/3.0.0_esbuild@0.12.9:
+    resolution: {integrity: sha512-No7U3ZUd6gPrrC6gqdb3XFcf2lNqzn8nvQXcgcyOl8szMVuN6YUvOplnmakxWyogI9d8SiJMl0uzBzJck+Aoxw==}
+    peerDependencies:
+      esbuild: '>=0.12 <1'
     dependencies:
       esbuild: 0.12.9
       jsonc-parser: 3.0.0
@@ -2900,16 +2863,6 @@ packages:
       graceful-fs: 4.2.6
       jsonfile: 4.0.0
       universalify: 0.1.2
-    dev: true
-
-  /fs-extra/9.1.0:
-    resolution: {integrity: sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==}
-    engines: {node: '>=10'}
-    dependencies:
-      at-least-node: 1.0.0
-      graceful-fs: 4.2.6
-      jsonfile: 6.1.0
-      universalify: 2.0.0
     dev: true
 
   /fs.realpath/1.0.0:

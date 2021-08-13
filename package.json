@@ -37,7 +37,7 @@
     "@types/mongodb": "^3.6.20",
     "@types/node": "15.12.4",
     "esbuild": "0.12.9",
-    "esbuild-register": "2.6.0",
+    "esbuild-register": "3.0.0",
     "eslint": "7.29.0",
     "jest": "26.6.3",
     "jest-junit": "12.2.0",
