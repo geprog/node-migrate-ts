@@ -18,7 +18,7 @@
     "/dist"
   ],
   "scripts": {
-    "build": "rollup -c rollup.config.js",
+    "build": "rollup -c rollup.config.ts --configPlugin rollup-plugin-typescript2",
     "clean": "rm -rf dist/ node_modules/",
     "lint": "prettier --check . && eslint --max-warnings 0 .",
     "start": "rollup -c rollup.config.js --watch",
@@ -34,7 +34,6 @@
     "@types/mongodb": "^3.6.20",
     "@types/node": "15.12.4",
     "esbuild": "0.12.9",
-    "esbuild-register": "2.6.0",
     "eslint": "7.29.0",
     "jest": "26.6.3",
     "jest-junit": "12.2.0",
