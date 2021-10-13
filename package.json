@@ -32,7 +32,7 @@
     "@geprog/eslint-config": "0.0.1",
     "@geprog/semantic-release-config": "1.0.0",
     "@jest/types": "26.6.2",
-    "@types/jest": "26.0.23",
+    "@types/jest": "26.0.24",
     "@types/mongodb": "^3.6.20",
     "@types/node": "15.12.4",
     "esbuild": "0.12.9",
