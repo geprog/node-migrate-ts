@@ -3,3 +3,4 @@ dist
 coverage/
 junit.xml
 *.tgz
+report.json
