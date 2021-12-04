@@ -37,7 +37,7 @@
     "@types/node": "15.12.4",
     "eslint": "7.29.0",
     "jest": "26.6.3",
-    "mongodb": "3.6.10",
+    "mongodb": "3.7.3",
     "prettier": "2.3.1",
     "rollup": "2.60.2",
     "rollup-plugin-dts": "4.0.1",

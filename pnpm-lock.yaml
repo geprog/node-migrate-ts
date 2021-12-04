@@ -9,7 +9,7 @@ specifiers:
   '@types/node': 15.12.4
   eslint: 7.29.0
   jest: 26.6.3
-  mongodb: 3.6.10
+  mongodb: 3.7.3
   prettier: 2.3.1
   rollup: 2.60.2
   rollup-plugin-dts: 4.0.1
@@ -29,7 +29,7 @@ devDependencies:
   '@types/node': 15.12.4
   eslint: 7.29.0
   jest: 26.6.3_ts-node@10.0.0
-  mongodb: 3.6.10
+  mongodb: 3.7.3
   prettier: 2.3.1
   rollup: 2.60.2
   rollup-plugin-dts: 4.0.1_rollup@2.60.2+typescript@4.5.2
@@ -4647,8 +4647,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /mongodb/3.6.10:
-    resolution: {integrity: sha512-fvIBQBF7KwCJnDZUnFFy4WqEFP8ibdXeFANnylW19+vOwdjOAvqIzPdsNCEMT6VKTHnYu4K64AWRih0mkFms6Q==}
+  /mongodb/3.7.3:
+    resolution: {integrity: sha512-Psm+g3/wHXhjBEktkxXsFMZvd3nemI0r3IPsE0bU+4//PnvNWKkzhZcEsbPcYiWqe8XqXJJEg4Tgtr7Raw67Yw==}
     engines: {node: '>=4'}
     peerDependencies:
       aws4: '*'
