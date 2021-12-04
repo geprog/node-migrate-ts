@@ -22,8 +22,8 @@
     "clean": "rm -rf dist/ node_modules/",
     "lint": "eslint --max-warnings 0 .",
     "lint:format": "prettier --check .",
-    "start": "rollup -c rollup.config.js --watch",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest --forceExit --detectOpenHandles --testLocationInResults --json --outputFile=report.json",
+    "start": "yarn build --watch",
+    "test": "jest --forceExit --detectOpenHandles --testLocationInResults --json --outputFile=report.json",
     "test:watch": "yarn test --watch",
     "typecheck": "tsc --noEmit",
     "release": "semantic-release"
@@ -35,7 +35,6 @@
     "@types/jest": "26.0.23",
     "@types/mongodb": "^3.6.20",
     "@types/node": "15.12.4",
-    "esbuild": "0.12.9",
     "eslint": "7.29.0",
     "jest": "26.6.3",
     "mongodb": "3.6.10",
