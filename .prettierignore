@@ -1,2 +1,4 @@
 dist/
 coverage/
+pnpm-lock.yaml
+report.json
