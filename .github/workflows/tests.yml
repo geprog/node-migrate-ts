@@ -1,5 +1,4 @@
 name: Tests
-
 on:
   pull_request:
     branches:
@@ -7,9 +6,6 @@ on:
   push:
     branches:
       - main
-
-env:
-  YARN_CACHE_FOLDER: ~/.yarn
 
 jobs:
   unit-tests:
@@ -22,24 +18,25 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: '14'
 
-      - name: Caching
+      - name: Cache pnpm modules
         uses: actions/cache@v2
         with:
-          path: ${{ env.YARN_CACHE_FOLDER }}
-          key: ${{ runner.OS }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.OS }}-yarn-${{ env.cache-name }}
-            ${{ runner.OS }}-yarn-
+            ${{ runner.os }}-
 
-      - name: Installing dependencies
-        run: yarn install --frozen-lockfile
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6
+          run_install: true
 
       - name: Unit test
-        run: yarn test
+        run: pnpm run test
 
       - uses: artiomtr/jest-coverage-report-action@v2.0-rc.1
         if: "github.event_name == 'pull_request'"
@@ -57,24 +54,25 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: '14'
 
-      - name: Caching
+      - name: Cache pnpm modules
         uses: actions/cache@v2
         with:
-          path: ${{ env.YARN_CACHE_FOLDER }}
-          key: ${{ runner.OS }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.OS }}-yarn-${{ env.cache-name }}
-            ${{ runner.OS }}-yarn-
+            ${{ runner.os }}-
 
-      - name: Installing dependencies
-        run: yarn install --frozen-lockfile
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6
+          run_install: true
 
       - name: Typecheck
-        run: yarn typecheck
+        run: pnpm run typecheck
 
   lint:
     name: Lint
@@ -86,24 +84,25 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: '14'
 
-      - name: Caching
+      - name: Cache pnpm modules
         uses: actions/cache@v2
         with:
-          path: ${{ env.YARN_CACHE_FOLDER }}
-          key: ${{ runner.OS }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.OS }}-yarn-${{ env.cache-name }}
-            ${{ runner.OS }}-yarn-
+            ${{ runner.os }}-
 
-      - name: Installing dependencies
-        run: yarn install --frozen-lockfile
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6
+          run_install: true
 
       - name: Lint
-        run: yarn lint
+        run: pnpm run lint
 
   check-format:
     name: Check format
@@ -115,21 +114,22 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: '14'
 
-      - name: Caching
+      - name: Cache pnpm modules
         uses: actions/cache@v2
         with:
-          path: ${{ env.YARN_CACHE_FOLDER }}
-          key: ${{ runner.OS }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.OS }}-yarn-${{ env.cache-name }}
-            ${{ runner.OS }}-yarn-
+            ${{ runner.os }}-
 
-      - name: Installing dependencies
-        run: yarn install --frozen-lockfile
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6
+          run_install: true
 
       - name: Check format
-        run: yarn lint:format
+        run: pnpm run lint:format

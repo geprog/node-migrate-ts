@@ -5,9 +5,6 @@ on:
     branches:
       - main
 
-env:
-  YARN_CACHE_FOLDER: ~/.yarn
-
 jobs:
   release:
     name: Release
@@ -19,27 +16,28 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: '14'
 
-      - name: Caching
+      - name: Cache pnpm modules
         uses: actions/cache@v2
         with:
-          path: ${{ env.YARN_CACHE_FOLDER }}
-          key: ${{ runner.OS }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.OS }}-yarn-${{ env.cache-name }}
-            ${{ runner.OS }}-yarn-
+            ${{ runner.os }}-
 
-      - name: Installing dependencies
-        run: yarn install --frozen-lockfile
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6
+          run_install: true
 
       - name: Build
-        run: yarn build
+        run: pnpm run build
 
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn release
+        run: pnpm run release
