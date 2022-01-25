@@ -10,7 +10,7 @@ specifiers:
   jest: 26.6.3
   mongodb: 4.2.2
   prettier: 2.3.1
-  rollup: 2.60.2
+  rollup: 2.66.1
   rollup-plugin-dts: 4.0.1
   rollup-plugin-typescript2: 0.31.1
   semantic-release: 18.0.0
@@ -29,9 +29,9 @@ devDependencies:
   jest: 26.6.3_ts-node@10.0.0
   mongodb: 4.2.2
   prettier: 2.3.1
-  rollup: 2.60.2
-  rollup-plugin-dts: 4.0.1_rollup@2.60.2+typescript@4.5.2
-  rollup-plugin-typescript2: 0.31.1_702216e1fdea525d11885793337dce12
+  rollup: 2.66.1
+  rollup-plugin-dts: 4.0.1_rollup@2.66.1+typescript@4.5.2
+  rollup-plugin-typescript2: 0.31.1_c790234e6797749c4a1c9facb7c0ec14
   semantic-release: 18.0.0
   ts-jest: 26.5.6_jest@26.6.3+typescript@4.5.2
   ts-node: 10.0.0_2671f187d47a420ebbbb03f10efe6b34
@@ -5520,7 +5520,7 @@ packages:
       glob: 7.2.0
     dev: true
 
-  /rollup-plugin-dts/4.0.1_rollup@2.60.2+typescript@4.5.2:
+  /rollup-plugin-dts/4.0.1_rollup@2.66.1+typescript@4.5.2:
     resolution: {integrity: sha512-DNv5F8pro/r0Hkx3JWKRtJZocDnqXfgypoajeiaNq134rYaFcEIl/oas5PogD1qexMadVijsHyVko1Chig0OOQ==}
     engines: {node: '>=v12.22.6'}
     peerDependencies:
@@ -5528,13 +5528,13 @@ packages:
       typescript: ^4.4.2
     dependencies:
       magic-string: 0.25.7
-      rollup: 2.60.2
+      rollup: 2.66.1
       typescript: 4.5.2
     optionalDependencies:
       '@babel/code-frame': 7.16.0
     dev: true
 
-  /rollup-plugin-typescript2/0.31.1_702216e1fdea525d11885793337dce12:
+  /rollup-plugin-typescript2/0.31.1_c790234e6797749c4a1c9facb7c0ec14:
     resolution: {integrity: sha512-sklqXuQwQX+stKi4kDfEkneVESPi3YM/2S899vfRdF9Yi40vcC50Oq4A4cSZJNXsAQE/UsBZl5fAOsBLziKmjw==}
     peerDependencies:
       rollup: '>=1.26.3'
@@ -5545,7 +5545,7 @@ packages:
       find-cache-dir: 3.3.2
       fs-extra: 8.1.0
       resolve: 1.20.0
-      rollup: 2.60.2
+      rollup: 2.66.1
       tslib: 2.2.0
       typescript: 4.5.2
     transitivePeerDependencies:
@@ -5554,8 +5554,8 @@ packages:
       - ts-toolbelt
     dev: true
 
-  /rollup/2.60.2:
-    resolution: {integrity: sha512-1Bgjpq61sPjgoZzuiDSGvbI1tD91giZABgjCQBKM5aYLnzjq52GoDuWVwT/cm/MCxCMPU8gqQvkj8doQ5C8Oqw==}
+  /rollup/2.66.1:
+    resolution: {integrity: sha512-crSgLhSkLMnKr4s9iZ/1qJCplgAgrRY+igWv8KhG/AjKOJ0YX/WpmANyn8oxrw+zenF3BXWDLa7Xl/QZISH+7w==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
