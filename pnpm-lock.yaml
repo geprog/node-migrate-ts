@@ -9,7 +9,7 @@ specifiers:
   eslint: 7.29.0
   jest: 26.6.3
   mongodb: 4.2.2
-  prettier: 2.3.1
+  prettier: 2.5.1
   semantic-release: 18.0.0
   ts-jest: 26.5.6
   ts-node: 10.0.0
@@ -17,7 +17,7 @@ specifiers:
   typescript: 4.5.2
 
 devDependencies:
-  '@geprog/eslint-config': 0.0.1_951949ed9bf02d26c666fe2f51f63a47
+  '@geprog/eslint-config': 0.0.1_dace6cd684368293c83aa40f3fb70d1e
   '@geprog/semantic-release-config': 1.0.0_semantic-release@18.0.0
   '@jest/types': 26.6.2
   '@types/jest': 26.0.23
@@ -25,7 +25,7 @@ devDependencies:
   eslint: 7.29.0
   jest: 26.6.3_ts-node@10.0.0
   mongodb: 4.2.2
-  prettier: 2.3.1
+  prettier: 2.5.1
   semantic-release: 18.0.0
   ts-jest: 26.5.6_jest@26.6.3+typescript@4.5.2
   ts-node: 10.0.0_2671f187d47a420ebbbb03f10efe6b34
@@ -397,7 +397,7 @@ packages:
       - supports-color
     dev: true
 
-  /@geprog/eslint-config/0.0.1_951949ed9bf02d26c666fe2f51f63a47:
+  /@geprog/eslint-config/0.0.1_dace6cd684368293c83aa40f3fb70d1e:
     resolution: {integrity: sha512-VHAXJ1J0znAYZf+a7pULUaSmR2kwySxwS7lf0Hh1cUD9+fA5IUB22c9JYO/soEEbIiU1Neq3auMkOXGtK8GXxQ==}
     peerDependencies:
       eslint: '>= 7'
@@ -406,13 +406,13 @@ packages:
       '@rushstack/eslint-patch': 1.1.0
       '@typescript-eslint/eslint-plugin': 4.24.0_855e7f62f4c1af9a6d7b28fb2f2933bb
       '@typescript-eslint/parser': 4.24.0_eslint@7.29.0+typescript@4.5.2
-      '@vue/eslint-config-prettier': 6.0.0_4fd5ad127b5301e57ee212c4b0a5a5cf
+      '@vue/eslint-config-prettier': 6.0.0_69870484fca3d6db3d72713cfa6ba371
       '@vue/eslint-config-typescript': 7.0.0_dd71fdd41efe29598ba6bb937f57384f
       eslint: 7.29.0
       eslint-config-prettier: 8.1.0_eslint@7.29.0
       eslint-plugin-import: 2.22.1_eslint@7.29.0
       eslint-plugin-jest: 24.3.1_a9473c93b0569c4134304cedd65df91f
-      eslint-plugin-prettier: 3.3.1_9efae9a5b6785b6da495ae74ea67884c
+      eslint-plugin-prettier: 3.3.1_6a328b70ac3b5c28822d31839f60e18a
       eslint-plugin-promise: 4.3.1
       eslint-plugin-simple-import-sort: 7.0.0_eslint@7.29.0
       eslint-plugin-vue: 7.9.0_eslint@7.29.0
@@ -1312,7 +1312,7 @@ packages:
       eslint-visitor-keys: 2.1.0
     dev: true
 
-  /@vue/eslint-config-prettier/6.0.0_4fd5ad127b5301e57ee212c4b0a5a5cf:
+  /@vue/eslint-config-prettier/6.0.0_69870484fca3d6db3d72713cfa6ba371:
     resolution: {integrity: sha512-wFQmv45c3ige5EA+ngijq40YpVcIkAy0Lihupnsnd1Dao5CBbPyfCzqtejFLZX1EwH/kCJdpz3t6s+5wd3+KxQ==}
     peerDependencies:
       eslint: '>= 5.0.0'
@@ -1321,8 +1321,8 @@ packages:
     dependencies:
       eslint: 7.29.0
       eslint-config-prettier: 6.15.0_eslint@7.29.0
-      eslint-plugin-prettier: 3.3.1_9efae9a5b6785b6da495ae74ea67884c
-      prettier: 2.3.1
+      eslint-plugin-prettier: 3.3.1_6a328b70ac3b5c28822d31839f60e18a
+      prettier: 2.5.1
     dev: true
 
   /@vue/eslint-config-typescript/7.0.0_dd71fdd41efe29598ba6bb937f57384f:
@@ -2677,7 +2677,7 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-prettier/3.3.1_9efae9a5b6785b6da495ae74ea67884c:
+  /eslint-plugin-prettier/3.3.1_6a328b70ac3b5c28822d31839f60e18a:
     resolution: {integrity: sha512-Rq3jkcFY8RYeQLgk2cCwuc0P7SEFwDravPhsJZOQ5N4YI4DSg50NyqJ/9gdZHzQlHf8MvafSesbNJCcP/FF6pQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
@@ -2690,7 +2690,7 @@ packages:
     dependencies:
       eslint: 7.29.0
       eslint-config-prettier: 8.1.0_eslint@7.29.0
-      prettier: 2.3.1
+      prettier: 2.5.1
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -5413,8 +5413,8 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier/2.3.1:
-    resolution: {integrity: sha512-p+vNbgpLjif/+D+DwAZAbndtRrR0md0MwfmOVN9N+2RgyACMT+7tfaRnT+WDPkqnuVwleyuBIG2XBxKDme3hPA==}
+  /prettier/2.5.1:
+    resolution: {integrity: sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
