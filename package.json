@@ -29,7 +29,7 @@
     "release": "semantic-release"
   },
   "devDependencies": {
-    "@geprog/eslint-config": "0.0.1",
+    "@geprog/eslint-config": "0.3.5",
     "@geprog/semantic-release-config": "1.0.0",
     "@jest/types": "26.6.2",
     "@types/jest": "26.0.23",
