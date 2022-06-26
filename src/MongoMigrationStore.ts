@@ -1,3 +1,4 @@
+/* c8 ignore start */
 import { Collection, Db } from 'mongodb';
 
 import { Migration } from './Migration';

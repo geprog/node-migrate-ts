@@ -1,3 +1,5 @@
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+
 import { MongoMigrationStore } from '~/MongoMigrationStore';
 import up from '~/up';
 import { migration1, migration2, migration3 } from '$/__helpers__/TestMigrations';
@@ -8,14 +10,15 @@ declare module '~/Migration' {
   }
 }
 
-jest.mock('~/MongoMigrationStore');
+// eslint-disable-next-line jest/require-hook
+vi.mock('~/MongoMigrationStore');
 
-const MongoMigrationStoreMock = MongoMigrationStore as jest.MockedClass<typeof MongoMigrationStore>;
+const MongoMigrationStoreMock = vi.mocked(MongoMigrationStore);
 
 describe('up', () => {
   beforeEach(() => {
-    jest.resetAllMocks();
-    jest.resetModules();
+    vi.resetAllMocks();
+    vi.resetModules();
   });
 
   it('should call up on all given migrations', async () => {
@@ -24,9 +27,9 @@ describe('up', () => {
     // given
     const migrations = [migration1, migration2, migration3];
     MongoMigrationStoreMock.mockImplementationOnce(() => ({
-      init: jest.fn(),
-      getAppliedMigrations: jest.fn().mockReturnValueOnce([]),
-      insertMigration: jest.fn(),
+      init: vi.fn(),
+      getAppliedMigrations: vi.fn().mockReturnValueOnce([]),
+      insertMigration: vi.fn(),
     }));
     const migrationStore = new MongoMigrationStore();
 
@@ -45,9 +48,9 @@ describe('up', () => {
     // given
     const migrations = [migration1, migration2, migration3];
     MongoMigrationStoreMock.mockImplementationOnce(() => ({
-      init: jest.fn(),
-      getAppliedMigrations: jest.fn().mockReturnValueOnce([{ migrationId: 'migration2', timestamp: 1251242789 }]),
-      insertMigration: jest.fn(),
+      init: vi.fn(),
+      getAppliedMigrations: vi.fn().mockReturnValueOnce([{ migrationId: 'migration2', timestamp: 1251242789 }]),
+      insertMigration: vi.fn(),
     }));
     const migrationStore = new MongoMigrationStore();
 
@@ -66,9 +69,9 @@ describe('up', () => {
     // given
     const migrations = [migration1];
     MongoMigrationStoreMock.mockImplementationOnce(() => ({
-      init: jest.fn(),
-      getAppliedMigrations: jest.fn().mockReturnValueOnce([]),
-      insertMigration: jest.fn(),
+      init: vi.fn(),
+      getAppliedMigrations: vi.fn().mockReturnValueOnce([]),
+      insertMigration: vi.fn(),
     }));
     const migrationStore = new MongoMigrationStore();
     const context = { test: '123' };
