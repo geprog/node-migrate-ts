@@ -48,6 +48,9 @@
       "optional": true
     }
   },
+  "engines": {
+    "pnpm": "7"
+  },
   "publishConfig": {
     "access": "public"
   }
