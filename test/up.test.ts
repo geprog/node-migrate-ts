@@ -10,7 +10,6 @@ declare module '~/Migration' {
   }
 }
 
-// eslint-disable-next-line jest/require-hook
 vi.mock('~/MongoMigrationStore');
 
 const MongoMigrationStoreMock = vi.mocked(MongoMigrationStore);

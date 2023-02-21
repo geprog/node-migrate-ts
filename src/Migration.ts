@@ -4,6 +4,6 @@ export interface MigrationContext {}
 
 export interface Migration {
   id: string;
-  up(context?: MigrationContext): Promise<void> | void;
-  down(context?: MigrationContext): Promise<void> | void;
+  up(this: void, context?: MigrationContext): Promise<void> | void;
+  down(this: void, context?: MigrationContext): Promise<void> | void;
 }
