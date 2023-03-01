@@ -10,6 +10,10 @@ export default async ({
   migrations: Migration[];
   migrationStore: MigrationStore;
 }): Promise<void> => {
+  if (migrations.length !== new Set(migrations.map((migration) => migration.id)).size) {
+    throw new Error('duplicate migration id');
+  }
+
   const appliedMigrations = await migrationStore.getAppliedMigrations();
   const migrationsToApply = migrations.filter(
     (migration) =>

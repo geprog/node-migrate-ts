@@ -82,4 +82,21 @@ describe('up', () => {
     expect(migration1.up).toHaveBeenCalledTimes(1);
     expect(migration1.up).toHaveBeenCalledWith(context);
   });
+
+  it('should throw an error when duplicate migration IDs are passed', async () => {
+    expect.assertions(1);
+
+    // given
+    const migrations = [migration1, migration1];
+    MongoMigrationStoreMock.mockImplementationOnce(() => ({
+      init: vi.fn(),
+      getAppliedMigrations: vi.fn().mockReturnValueOnce([]),
+      insertMigration: vi.fn(),
+    }));
+    const migrationStore = new MongoMigrationStore();
+
+    // when
+    // then
+    await expect(() => up({ migrations, migrationStore })).rejects.toThrowError('duplicate migration id');
+  });
 });
